@@ -1,0 +1,30 @@
+from sympy import *
+from sympy.plotting import (plot,plot_parametric)
+
+x = symbols('x', real=True)
+repeat = 'Y'
+while repeat=='Y':
+    a = eval(input('Enter the leading coefficient a: '))
+    b = eval(input('Enter the coefficient b: '))
+    c = eval(input('Enter the integer c: '))
+    f = a*x**2 + b*x + c
+    vx = Rational(-b, 2*a)
+    vy = f.subs(x,vx)
+    xint = solve(f,x)
+    if len(xint)==0:
+        print('No x-intercepts')
+    elif len(xint)==1:
+        print('x-intercept = ', xint[0])
+    else:
+        print('The x-intercepts are', xint[0], 'and', xint[1])
+    yint = f.subs(x,0)
+    print('The y intercept is ',yint)
+    
+    if a > 0:
+        print('The graph opens up')
+    else:
+        print('The graph opens down')
+    print('The vertex of the function is (',vx,',',vy,')')
+    repeat = print(input('Would you like to enter another function? (Y or N): '))
+
+plot(f)
