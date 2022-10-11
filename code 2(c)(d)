@@ -1,3 +1,18 @@
+
+x = symbols('x')
+fx = x**3 - 8
+print(fx)
+gx = x-2
+print(gx)
+hxunsimp = fx/gx
+print(hxunsimp)
+hxsimp = div(fx,gx)
+print(hxsimp)
+hxsimp = hxsimp[0]
+#the issue that was creating a problem was that hxsimp was equal to (itself ,0), which made the code wet itself
+
+
+
 list2 = [2.1, 2.01, 2.001, 2.0001, 2]
 
 hx_unsimp_sol = [hxunsimp.subs(x, i) for i in list2]
