@@ -1,0 +1,28 @@
+list2 = [2.1, 2.01, 2.001, 2.0001, 2]
+
+hx_unsimp_sol = [hxunsimp.subs(x, i) for i in list2]
+
+print(hx_unsimp_sol)
+
+list2 = [2.1, 2.01, 2.001, 2.0001, 2]
+
+(hx_simp_sol) = [hxsimp.subs(x, i) for i in list2]
+
+print(hx_simp_sol)
+
+
+
+
+
+
+listBIG = [10, 100, 1000, 10000, 100000]
+
+hx_unsimp_sol = [hxunsimp.subs(x, i) for i in listBIG]
+
+print(hx_unsimp_sol)
+
+#as x approaches infinity, y also approaches infinity
+
+hx_simp_sol = [hxsimp.subs(x, i) for i in listBIG]
+
+print(hx_simp_sol)
